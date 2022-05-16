@@ -51,6 +51,10 @@ export function useDataQuality({
     workerGroup: 'default',
     delayTime: 0,
     ruleId: 1,
+    //TODO 增加dataquality响应式数据
+    fieldLength: 0,
+    srcFilter: '',
+    //END
     deployMode: 'cluster',
     driverCores: 1,
     driverMemory: '512M',
@@ -86,11 +90,14 @@ export function useDataQuality({
       ...Fields.useTaskGroup(model, projectCode),
       ...Fields.useFailed(),
       Fields.useDelayTime(model),
+      //超时告警
       ...Fields.useTimeoutAlarm(model),
+      //规则
       ...Fields.useRules(model, (items: IJsonItem[], len: number) => {
         jsonRef.value.splice(15, len, ...items)
         updateElements()
       }),
+      //部署方式
       Fields.useDeployMode(),
       Fields.useDriverCores(),
       Fields.useDriverMemory(),
@@ -106,6 +113,7 @@ export function useDataQuality({
           placeholder: t('project.node.option_parameters_tips')
         }
       },
+      //   自定义参数
       ...Fields.useCustomParams({
         model,
         field: 'localParams',

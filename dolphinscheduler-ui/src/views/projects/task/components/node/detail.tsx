@@ -46,7 +46,7 @@ const NodeDetail = defineComponent({
       from: 0
     }
     const { data, projectCode, from, readonly, definition } = unref(detailData)
-
+    // 生成表单所需参数
     const { elementsRef, rulesRef, model } = useTask({
       data,
       projectCode,
@@ -64,6 +64,7 @@ const NodeDetail = defineComponent({
 
     expose(formRef)
 
+    // TODO 节点定义表单
     return () => (
       <Form
         ref={formRef}

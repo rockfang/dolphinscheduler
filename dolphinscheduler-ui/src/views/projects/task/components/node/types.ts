@@ -189,6 +189,7 @@ interface ISparkParameters {
 }
 
 interface IRuleParameters {
+  field_length?: number
   check_type?: string
   comparison_execute_sql?: string
   comparison_name?: string
@@ -358,6 +359,8 @@ interface INodeData
   failedBranch?: number
   udfs?: string[]
   customConfig?: boolean
+  fieldLength?: number
+  srcFilter?: string
 }
 
 interface ITaskData

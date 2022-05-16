@@ -356,6 +356,7 @@ export default defineComponent({
           processInstance={props.instance}
           taskInstance={currentTaskInstance.value}
           onViewLog={handleViewLog}
+          //这里的data用于表单初始化用
           data={currTask.value as any}
           definition={processDefinition}
           onSubmit={taskConfirm}

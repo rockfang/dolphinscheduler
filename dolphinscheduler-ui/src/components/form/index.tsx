@@ -48,6 +48,7 @@ const Form = defineComponent({
   render(props: { meta: IMeta; layout?: GridProps; loading?: boolean }) {
     const { loading, layout, meta } = props
     const { elements = [], ...restFormProps } = meta
+    debugger
     return (
       <NSpin show={loading}>
         <NForm {...restFormProps} ref='formRef'>

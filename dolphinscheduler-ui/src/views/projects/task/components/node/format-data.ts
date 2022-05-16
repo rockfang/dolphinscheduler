@@ -269,10 +269,12 @@ export function formatParams(data: INodeData): {
     }
   }
   if (data.taskType === 'DATA_QUALITY') {
+    //TODO
     taskParams.ruleId = data.ruleId
     taskParams.ruleInputParameter = {
       check_type: data.check_type,
       comparison_execute_sql: data.comparison_execute_sql,
+      field_length: data.fieldLength,
       comparison_type: data.comparison_type,
       comparison_name: data.comparison_name,
       failure_strategy: data.failure_strategy,
@@ -511,6 +513,7 @@ export function formatModel(data: ITaskData) {
     params.src_datasource_id =
       data.taskParams.ruleInputParameter.src_datasource_id
     params.src_table = data.taskParams.ruleInputParameter.src_table
+    // todo
     params.src_filter = data.taskParams.ruleInputParameter.src_filter
     params.src_field = data.taskParams.ruleInputParameter.src_field
     params.statistics_execute_sql =

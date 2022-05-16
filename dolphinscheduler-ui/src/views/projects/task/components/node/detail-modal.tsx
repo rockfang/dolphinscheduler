@@ -208,6 +208,7 @@ const NodeDetailModal = defineComponent({
         initHeaderLinks(props.processInstance, props.data.taskType)
         taskStore.init()
         await nextTick()
+        //初始化表单数据，里面会根据传入值动态初始化
         detailRef.value.value.setValues(formatModel(props.data))
       }
     )
