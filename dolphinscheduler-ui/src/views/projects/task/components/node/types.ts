@@ -359,8 +359,9 @@ interface INodeData
   failedBranch?: number
   udfs?: string[]
   customConfig?: boolean
-  fieldLength?: number
-  srcFilter?: string
+  //   回显用
+  //   fieldLength?: string
+  //   srcFilter?: string
 }
 
 interface ITaskData

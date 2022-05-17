@@ -62,6 +62,7 @@ export function useTask({
     }
   }
   // 这里存了表单的信息
+  debugger
   const { model, json } = nodes[data.taskType || 'SHELL'](params)
   jsonRef.value = json
   model.preTasks = taskStore.getPreTasks

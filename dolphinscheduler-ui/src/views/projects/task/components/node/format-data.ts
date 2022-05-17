@@ -269,12 +269,13 @@ export function formatParams(data: INodeData): {
     }
   }
   if (data.taskType === 'DATA_QUALITY') {
-    //TODO
+    //TODO 创建
+    debugger
     taskParams.ruleId = data.ruleId
     taskParams.ruleInputParameter = {
       check_type: data.check_type,
       comparison_execute_sql: data.comparison_execute_sql,
-      field_length: data.fieldLength,
+      field_length: data.field_length,
       comparison_type: data.comparison_type,
       comparison_name: data.comparison_name,
       failure_strategy: data.failure_strategy,
@@ -385,6 +386,8 @@ export function formatParams(data: INodeData): {
 }
 
 export function formatModel(data: ITaskData) {
+  //真正回显 表单数据
+  debugger
   const params = {
     ...omit(data, [
       'environmentCode',
@@ -514,6 +517,7 @@ export function formatModel(data: ITaskData) {
       data.taskParams.ruleInputParameter.src_datasource_id
     params.src_table = data.taskParams.ruleInputParameter.src_table
     // todo
+    params.field_length = data.taskParams.ruleInputParameter.field_length
     params.src_filter = data.taskParams.ruleInputParameter.src_filter
     params.src_field = data.taskParams.ruleInputParameter.src_field
     params.statistics_execute_sql =

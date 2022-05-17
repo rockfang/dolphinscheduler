@@ -52,8 +52,8 @@ export function useDataQuality({
     delayTime: 0,
     ruleId: 1,
     //TODO 增加dataquality响应式数据
-    fieldLength: 0,
-    srcFilter: '',
+    // fieldLength: '',
+    // srcFilter: '',
     //END
     deployMode: 'cluster',
     driverCores: 1,
